@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+
+.all {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+#kocholo {
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: #E0E3E6 2px solid;
+    border-radius: 25px;
+    margin-bottom: -16px;
+
+}
+
+.title {
+
+    color: #E0E3E6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 28px;
+    box-sizing: border-box;
+    padding: 0.25rem;
+    width: 300px;
+    font-size: 14px;
+}
+
+.radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.radio-inputs .radio input {
+    display: none;
+}
+
+.radio-inputs .radio .name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    border: none;
+    padding: .5rem 0;
+    color: #E0E3E6;
+    transition: all .15s ease-in-out;
+}
+
+
+.radio-inputs .radio input:checked+.name {
+    background-color: #262626;
+    font-weight: 600;
+    scale: 1.06;
+}
+
+.inputrow {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    width: 300px;
+
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.inp {
+    border: none;
+    width: 75px;
+    height: 30px;
+    background-color: #282828;
+    border-radius: 70px;
+    padding: 5px;
+    padding-top: 8px;
+    padding-left: 9px;
+    color: #E0E3E6;
+    height: 37px;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.inp:focus {
+    outline: none;
+    border: #E0E3E6 2px solid;
+    scale: 1.04;
+}
+
+.width {
+    background-color: #282828;
+    border-radius: 70px;
+    padding-left: 12px;
+}
+
+.height {
+    background-color: #282828;
+    border-radius: 70px;
+    margin-left: 10px;
+    padding-left: 12px;
+}
+
+
+.forokon {
+    border: none;
+    margin-top: 33px;
+    border-radius: 25px;
+    width: 500px;
+    background-color: #262626;
+    resize: vertical;
+    color: #E0E3E6;
+    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 17px;
+    resize: vertical;
+    min-height: 150px;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.forokon:focus {
+    outline: none;
+    border: #E0E3E6 2px solid;
+}
+
+.button {
+    position: relative;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    color: #E0E3E6;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 25px;
+    width: 120px;
+    height: 47px;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.0, 1, 0.0, 1);
+    margin-top: 19px;
+}
+
+.button:active {
+    scale: 0.90;
+}
+
+#generatedImage {
+    border-radius: 5px;
+    border: #E0E3E6 solid 1px;
+    max-width: 90%;
+    max-height: 570px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    display: none;
+}
+
+
+
+.foot {
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #dddddd;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    height: 50px;
+
+}
+
+.loader {
+    display : none;
+    margin-top: 60px;
+    width: 230px;
+    height: 230px;
+    border-radius: 30px;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    animation: spin 3s infinite;
+}
+
+.loader::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(70px);
+}
+@keyframes spin {
+    0% {
+        transform: rotate(-45deg);
+    }
+
+    50% {
+        transform: rotate(-360deg);
+        border-radius: 50%;
+    }
+
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
+@media (max-width: 560px) {
+
+    .forokon {
+        width: 400px;
+    }
+
+}
+
+@media (max-width: 404px) {
+
+    .forokon {
+        width: 380px;
+    }
+
+}
