@@ -6,6 +6,27 @@
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salis Studio</title>
+    <style>
+        #imageGrid {
+            display: grid;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .gridImage {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: none;
+        }
+
+        .loader-grid {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +40,7 @@
                     <span class="name">Normal</span>
                 </label>
                 <label class="radio">
-                    <input type="radio" name="radio" value="flux" checked>
+                    <input type="radio" name="radio" value="turbo" checked>
                     <span class="name">Turbo</span>
                 </label>
                 <label class="radio">
@@ -36,6 +57,10 @@
                     <span class="content">Width:</span>
                     <input required class="inp" type="number" id="width" value="1080" min="150" max="1920">
                 </div>
+                <div class="container count">
+                    <span class="content">Number:</span>
+                    <input required class="inp" type="number" id="imageCount" value="1" min="1" max="100">
+                </div>
                 <div class="container height">
                     <span class="content">Height:</span>
                     <input required class="inp" type="number" id="height" value="1080" min="150" max="1920">
@@ -44,13 +69,15 @@
             <div>
                 <textarea class="forokon" id="promptText" placeholder="Enter your prompt here..."></textarea>
             </div>
-            <button class="button" onclick="generateImage()">Generate</button>
+            <button class="button" onclick="generateMultipleImages()">Generate</button>
             <div class="loader"></div>
-            <img class="imag" id="generatedImage" src="" alt="Generated Image" onerror="this.src='error.png';">
+            <div class="loader-grid" id="gridLoader">Generating images...</div>
+            <div id="imageGrid"></div>
             <pre
                 class="foot"> © 2024 Salist™ - Created by <a href="https://github.com/sl-HapY" style="color: #0dcaf0;">sl_HapY</a></pre>
         </div>
     </div>
     <script src="app.js"></script>
 </body>
+
 </html>
